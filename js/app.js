@@ -62,99 +62,99 @@
       !x(e) &&
       ("array" === n ||
         0 === t ||
-        ("number" == typeof t && 0 < t && t - 1 in e))
+        ("number" == typeof t && 0 < t && t - 1 在 e))
     );
   }
   (k.fn = k.prototype = {
     jquery: f,
     constructor: k,
-    length: 0,
+    length: 0，
     toArray: function () {
       return s.call(this);
-    },
+    }，
     get: function (e) {
-      return null == e ? s.call(this) : e < 0 ? this[e + this.length] : this[e];
-    },
+      return null == e ? s.call(this) : e < 0 ? this[e + this。length] : this[e];
+    }，
     pushStack: function (e) {
-      var t = k.merge(this.constructor(), e);
+      var t = k.merge(this。constructor(), e);
       return (t.prevObject = this), t;
-    },
+    }，
     each: function (e) {
       return k.each(this, e);
-    },
+    }，
     map: function (n) {
-      return this.pushStack(
-        k.map(this, function (e, t) {
+      return this。pushStack(
+        k.map(this， function (e， t) {
           return n.call(e, t, e);
         })
       );
-    },
+    }，
     slice: function () {
-      return this.pushStack(s.apply(this, arguments));
-    },
+      return this。pushStack(s.apply(this, arguments));
+    }，
     first: function () {
-      return this.eq(0);
-    },
+      return this。eq(0);
+    }，
     last: function () {
-      return this.eq(-1);
-    },
+      return this。eq(-1);
+    }，
     eq: function (e) {
-      var t = this.length,
+      var t = this。length，
         n = +e + (e < 0 ? t : 0);
-      return this.pushStack(0 <= n && n < t ? [this[n]] : []);
-    },
+      return this。pushStack(0 <= n && n < t ? [this[n]] : []);
+    }，
     end: function () {
-      return this.prevObject || this.constructor();
-    },
+      return this。prevObject || this。constructor();
+    }，
     push: u,
-    sort: t.sort,
-    splice: t.splice,
-  }),
-    (k.extend = k.fn.extend = function () {
-      var e,
-        t,
-        n,
-        r,
-        i,
-        o,
-        a = arguments[0] || {},
-        s = 1,
-        u = arguments.length,
+    sort: t.sort，
+    splice: t.splice，
+  })，
+    (k.extend = k.fn。extend = function () {
+      var e，
+        t，
+        n，
+        r，
+        i，
+        o，
+        a = arguments[0] || {}，
+        s = 1，
+        u = arguments.length，
         l = !1;
       for (
-        "boolean" == typeof a && ((l = a), (a = arguments[s] || {}), s++),
-          "object" == typeof a || m(a) || (a = {}),
+        "boolean" == typeof a && ((l = a)， (a = arguments[s] || {}), s++)，
+          "object" == typeof a || m(a) || (a = {})，
           s === u && ((a = this), s--);
         s < u;
         s++
       )
         if (null != (e = arguments[s]))
-          for (t in e)
-            (r = e[t]),
+          for (t 在 e)
+            (r = e[t])，
               "__proto__" !== t &&
                 a !== r &&
                 (l && r && (k.isPlainObject(r) || (i = Array.isArray(r)))
-                  ? ((n = a[t]),
+                  ? ((n = a[t])，
                     (o =
                       i && !Array.isArray(n)
                         ? []
                         : i || k.isPlainObject(n)
                         ? n
-                        : {}),
-                    (i = !1),
+                        : {})，
+                    (i = !1)，
                     (a[t] = k.extend(l, o, r)))
                   : void 0 !== r && (a[t] = r));
       return a;
-    }),
+    })，
     k.extend({
-      expando: "jQuery" + (f + Math.random()).replace(/\D/g, ""),
-      isReady: !0,
+      expando: "jQuery" + (f + Math.random())。replace(/\D/g， "")，
+      isReady: !0，
       error: function (e) {
         throw new Error(e);
-      },
-      noop: function () {},
+      }，
+      noop: function () {}，
       isPlainObject: function (e) {
-        var t, n;
+        var t， n;
         return (
           !(!e || "[object Object]" !== o.call(e)) &&
           (!(t = r(e)) ||
@@ -162,7 +162,7 @@
               typeof (n = v.call(t, "constructor") && t.constructor) &&
               a.call(n) === l))
         );
-      },
+      }，
       isEmptyObject: function (e) {
         var t;
         for (t in e) return !1;
@@ -1108,72 +1108,72 @@
         },
         header: function (e) {
           return J.test(e.nodeName);
-        },
+        }，
         input: function (e) {
           return Q.test(e.nodeName);
-        },
+        }，
         button: function (e) {
-          var t = e.nodeName.toLowerCase();
+          var t = e.nodeName。toLowerCase();
           return ("input" === t && "button" === e.type) || "button" === t;
-        },
+        }，
         text: function (e) {
           var t;
           return (
-            "input" === e.nodeName.toLowerCase() &&
+            "input" === e.nodeName。toLowerCase() &&
             "text" === e.type &&
             (null == (t = e.getAttribute("type")) || "text" === t.toLowerCase())
           );
-        },
+        }，
         first: ve(function () {
           return [0];
-        }),
-        last: ve(function (e, t) {
+        })，
+        last: ve(function (e， t) {
           return [t - 1];
-        }),
-        eq: ve(function (e, t, n) {
+        })，
+        eq: ve(function (e， t， n) {
           return [n < 0 ? n + t : n];
-        }),
-        even: ve(function (e, t) {
+        })，
+        even: ve(function (e， t) {
           for (var n = 0; n < t; n += 2) e.push(n);
           return e;
-        }),
-        odd: ve(function (e, t) {
+        })，
+        odd: ve(function (e， t) {
           for (var n = 1; n < t; n += 2) e.push(n);
           return e;
-        }),
-        lt: ve(function (e, t, n) {
+        })，
+        lt: ve(function (e， t， n) {
           for (var r = n < 0 ? n + t : t < n ? t : n; 0 <= --r; ) e.push(r);
           return e;
-        }),
-        gt: ve(function (e, t, n) {
+        })，
+        gt: ve(function (e， t， n) {
           for (var r = n < 0 ? n + t : n; ++r < t; ) e.push(r);
           return e;
-        }),
-      },
-    }).pseudos.nth = b.pseudos.eq),
-    { radio: !0, checkbox: !0, file: !0, password: !0, image: !0 }))
+        })，
+      }，
+    })。pseudos。nth = b.pseudos。eq)，
+    { radio: !0， checkbox: !0， file: !0， password: !0， image: !0 }))
       b.pseudos[e] = de(e);
-    for (e in { submit: !0, reset: !0 }) b.pseudos[e] = he(e);
+    for (e 在 { submit: !0， reset: !0 }) b.pseudos[e] = he(e);
     function me() {}
     function xe(e) {
-      for (var t = 0, n = e.length, r = ""; t < n; t++) r += e[t].value;
+      for (var t = 0， n = e.length， r = ""; t < n; t++) r += e[t]。value;
       return r;
     }
-    function be(s, e, t) {
-      var u = e.dir,
-        l = e.next,
+    function be(s， e， t) {
+      var u = e.dir，
+        l = e.next，
         c = l || u,
         f = t && "parentNode" === c,
         p = r++;
       return e.first
-        ? function (e, t, n) {
+        ? function (e， t， n) {
             while ((e = e[u])) if (1 === e.nodeType || f) return s(e, t, n);
             return !1;
           }
-        : function (e, t, n) {
-            var r,
-              i,
-              o,
+        : function (e， t， n) {
+            var r，
+              i，
+              o，
               a = [S, p];
             if (n) {
               while ((e = e[u]))
@@ -1184,8 +1184,8 @@
                   if (
                     ((i =
                       (o = e[k] || (e[k] = {}))[e.uniqueID] ||
-                      (o[e.uniqueID] = {})),
-                    l && l === e.nodeName.toLowerCase())
+                      (o[e.uniqueID] = {}))，
+                    l && l === e.nodeName。toLowerCase())
                   )
                     e = e[u] || e;
                   else {
@@ -1798,83 +1798,83 @@
         },
         has: function (e) {
           return e ? -1 < k.inArray(e, s) : 0 < s.length;
-        },
-        empty: function () {
-          return s && (s = []), this;
-        },
+        }，
+        空的: function () {
+          return s && (s = [])， this;
+        }，
         disable: function () {
-          return (a = u = []), (s = t = ""), this;
-        },
+          return (a = u = [])， (s = t = "")， this;
+        }，
         disabled: function () {
           return !s;
-        },
+        }，
         lock: function () {
-          return (a = u = []), t || i || (s = t = ""), this;
-        },
+          return (a = u = []), t || i || (s = t = "")， this;
+        }，
         locked: function () {
           return !!a;
-        },
-        fireWith: function (e, t) {
+        }，
+        fireWith: function (e， t) {
           return (
             a ||
-              ((t = [e, (t = t || []).slice ? t.slice() : t]),
-              u.push(t),
-              i || c()),
+              ((t = [e, (t = t || [])。slice ? t.slice() : t])，
+              u.push(t)，
+              i || c())，
             this
           );
-        },
+        }，
         fire: function () {
-          return f.fireWith(this, arguments), this;
-        },
+          return f.fireWith(this, arguments)， this;
+        }，
         fired: function () {
           return !!o;
-        },
+        }，
       };
     return f;
-  }),
+  })，
     k.extend({
       Deferred: function (e) {
         var o = [
             [
-              "notify",
-              "progress",
-              k.Callbacks("memory"),
-              k.Callbacks("memory"),
-              2,
-            ],
+              "notify"，
+              "progress"，
+              k.Callbacks("memory")，
+              k.Callbacks("memory")，
+              2，
+            ]，
             [
-              "resolve",
-              "done",
-              k.Callbacks("once memory"),
-              k.Callbacks("once memory"),
-              0,
-              "resolved",
-            ],
+              "resolve"，
+              "done"，
+              k.Callbacks("once memory")，
+              k.Callbacks("once memory")，
+              0，
+              "resolved"，
+            ]，
             [
-              "reject",
-              "fail",
-              k.Callbacks("once memory"),
-              k.Callbacks("once memory"),
-              1,
-              "rejected",
-            ],
-          ],
-          i = "pending",
+              "reject"，
+              "fail"，
+              k.Callbacks("once memory")，
+              k.Callbacks("once memory")，
+              1，
+              "rejected"，
+            ]，
+          ]，
+          i = "pending"，
           a = {
             state: function () {
               return i;
-            },
+            }，
             always: function () {
-              return s.done(arguments).fail(arguments), this;
-            },
+              return s.done(arguments)。fail(arguments)， this;
+            }，
             catch: function (e) {
               return a.then(null, e);
-            },
+            }，
             pipe: function () {
               var i = arguments;
               return k
-                .Deferred(function (r) {
-                  k.each(o, function (e, t) {
+                。Deferred(function (r) {
+                  k.each(o, function (e， t) {
                     var n = m(i[t[4]]) && i[t[4]];
                     s[t[1]](function () {
                       var e = n && n.apply(this, arguments);
@@ -2038,114 +2038,114 @@
         (!0 === e ? --k.readyWait : k.isReady) ||
           ((k.isReady = !0) !== e && 0 < --k.readyWait) ||
           F.resolveWith(E, [k]);
-      },
-    }),
-    (k.ready.then = F.then),
+      }，
+    })，
+    (k.ready。then = F.then)，
     "complete" === E.readyState ||
-    ("loading" !== E.readyState && !E.documentElement.doScroll)
+    ("loading" !== E.readyState && !E.documentElement。doScroll)
       ? C.setTimeout(k.ready)
-      : (E.addEventListener("DOMContentLoaded", B),
+      : (E.addEventListener("DOMContentLoaded", B)，
         C.addEventListener("load", B));
-  var _ = function (e, t, n, r, i, o, a) {
-      var s = 0,
-        u = e.length,
+  var _ = function (e， t， n， r， i， o， a) {
+      var s = 0，
+        u = e.length，
         l = null == n;
       if ("object" === w(n))
-        for (s in ((i = !0), n)) _(e, t, s, n[s], !0, o, a);
+        for (s 在 ((i = !0), n)) _(e, t, s, n[s], !0, o, a);
       else if (
         void 0 !== r &&
-        ((i = !0),
-        m(r) || (a = !0),
+        ((i = !0)，
+        m(r) || (a = !0)，
         l &&
           (a
-            ? (t.call(e, r), (t = null))
-            : ((l = t),
-              (t = function (e, t, n) {
+            ? (t.call(e, r)， (t = null))
+            : ((l = t)，
+              (t = function (e， t， n) {
                 return l.call(k(e), n);
-              }))),
+              })))，
         t)
       )
         for (; s < u; s++) t(e[s], n, a ? r : r.call(e[s], s, t(e[s], n)));
       return i ? e : l ? t.call(e) : u ? t(e[0], n) : o;
-    },
-    z = /^-ms-/,
+    }，
+    z = /^-ms-/，
     U = /-([a-z])/g;
-  function X(e, t) {
+  function X(e， t) {
     return t.toUpperCase();
   }
   function V(e) {
-    return e.replace(z, "ms-").replace(U, X);
+    return e.replace(z, "ms-")。replace(U, X);
   }
   var G = function (e) {
     return 1 === e.nodeType || 9 === e.nodeType || !+e.nodeType;
   };
   function Y() {
-    this.expando = k.expando + Y.uid++;
+    this。expando = k.expando + Y.uid++;
   }
-  (Y.uid = 1),
+  (Y.uid = 1)，
     (Y.prototype = {
       cache: function (e) {
-        var t = e[this.expando];
+        var t = e[this。expando];
         return (
           t ||
-            ((t = {}),
+            ((t = {})，
             G(e) &&
               (e.nodeType
-                ? (e[this.expando] = t)
-                : Object.defineProperty(e, this.expando, {
+                ? (e[this。expando] = t)
+                : Object.defineProperty(e, this。expando， {
                     value: t,
-                    configurable: !0,
-                  }))),
+                    configurable: !0，
+                  })))，
           t
         );
-      },
-      set: function (e, t, n) {
-        var r,
-          i = this.cache(e);
+      }，
+      set: function (e， t， n) {
+        var r，
+          i = this。cache(e);
         if ("string" == typeof t) i[V(t)] = n;
-        else for (r in t) i[V(r)] = t[r];
+        else for (r 在 t) i[V(r)] = t[r];
         return i;
-      },
-      get: function (e, t) {
+      }，
+      get: function (e， t) {
         return void 0 === t
-          ? this.cache(e)
-          : e[this.expando] && e[this.expando][V(t)];
-      },
-      access: function (e, t, n) {
+          ? this。cache(e)
+          : e[this。expando] && e[this。expando][V(t)];
+      }，
+      access: function (e， t， n) {
         return void 0 === t || (t && "string" == typeof t && void 0 === n)
-          ? this.get(e, t)
-          : (this.set(e, t, n), void 0 !== n ? n : t);
-      },
-      remove: function (e, t) {
-        var n,
+          ? this。get(e, t)
+          : (this。set(e, t, n)， void 0 !== n ? n : t);
+      }，
+      remove: function (e， t) {
+        var n，
           r = e[this.expando];
         if (void 0 !== r) {
           if (void 0 !== t) {
             n = (t = Array.isArray(t)
               ? t.map(V)
-              : (t = V(t)) in r
+              : (t = V(t)) 在 r
               ? [t]
-              : t.match(R) || []).length;
+              : t.match(R) || [])。length;
             while (n--) delete r[t[n]];
           }
           (void 0 === t || k.isEmptyObject(r)) &&
-            (e.nodeType ? (e[this.expando] = void 0) : delete e[this.expando]);
+            (e.nodeType ? (e[this。expando] = void 0) : delete e[this。expando]);
         }
-      },
+      }，
       hasData: function (e) {
-        var t = e[this.expando];
+        var t = e[this。expando];
         return void 0 !== t && !k.isEmptyObject(t);
-      },
+      }，
     });
-  var Q = new Y(),
-    J = new Y(),
-    K = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
+  var Q = new Y()，
+    J = new Y()，
+    K = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/，
     Z = /[A-Z]/g;
-  function ee(e, t, n) {
-    var r, i;
+  function ee(e， t， n) {
+    var r， i;
     if (void 0 === n && 1 === e.nodeType)
       if (
-        ((r = "data-" + t.replace(Z, "-$&").toLowerCase()),
+        ((r = "data-" + t.replace(Z, "-$&")。toLowerCase())，
         "string" == typeof (n = e.getAttribute(r)))
       ) {
         try {
@@ -2167,37 +2167,37 @@
   k.extend({
     hasData: function (e) {
       return J.hasData(e) || Q.hasData(e);
-    },
-    data: function (e, t, n) {
+    }，
+    data: function (e， t， n) {
       return J.access(e, t, n);
-    },
-    removeData: function (e, t) {
+    }，
+    removeData: function (e， t) {
       J.remove(e, t);
-    },
-    _data: function (e, t, n) {
+    }，
+    _data: function (e， t， n) {
       return Q.access(e, t, n);
-    },
-    _removeData: function (e, t) {
+    }，
+    _removeData: function (e， t) {
       Q.remove(e, t);
-    },
-  }),
-    k.fn.extend({
-      data: function (n, e) {
-        var t,
-          r,
-          i,
-          o = this[0],
+    }，
+  })，
+    k.fn。extend({
+      data: function (n， e) {
+        var t，
+          r，
+          i，
+          o = this[0]，
           a = o && o.attributes;
         if (void 0 === n) {
           if (
-            this.length &&
-            ((i = J.get(o)), 1 === o.nodeType && !Q.get(o, "hasDataAttrs"))
+            this。length &&
+            ((i = J.get(o))， 1 === o.nodeType && !Q.get(o, "hasDataAttrs"))
           ) {
             t = a.length;
             while (t--)
               a[t] &&
-                0 === (r = a[t].name).indexOf("data-") &&
-                ((r = V(r.slice(5))), ee(o, r, i[r]));
+                0 === (r = a[t]。name)。indexOf("data-") &&
+                ((r = V(r.slice(5)))， ee(o, r, i[r]));
             Q.set(o, "hasDataAttrs", !0);
           }
           return i;
@@ -2261,71 +2261,71 @@
               e,
               function () {
                 k.dequeue(e, t);
-              },
+              }，
               o
-            )),
-          !r && o && o.empty.fire();
-      },
-      _queueHooks: function (e, t) {
+            ))，
+          !r && o && o.空的。fire();
+      }，
+      _queueHooks: function (e， t) {
         var n = t + "queueHooks";
         return (
           Q.get(e, n) ||
           Q.access(e, n, {
-            empty: k.Callbacks("once memory").add(function () {
+            空的: k.Callbacks("once memory")。add(function () {
               Q.remove(e, [t + "queue", n]);
-            }),
+            })，
           })
         );
-      },
-    }),
-    k.fn.extend({
-      queue: function (t, n) {
+      }，
+    })，
+    k.fn。extend({
+      queue: function (t， n) {
         var e = 2;
         return (
-          "string" != typeof t && ((n = t), (t = "fx"), e--),
+          "string" != typeof t && ((n = t)， (t = "fx"), e--)，
           arguments.length < e
             ? k.queue(this[0], t)
             : void 0 === n
             ? this
-            : this.each(function () {
+            : this。each(function () {
                 var e = k.queue(this, t, n);
-                k._queueHooks(this, t),
+                k._queueHooks(this, t)，
                   "fx" === t && "inprogress" !== e[0] && k.dequeue(this, t);
               })
         );
-      },
+      }，
       dequeue: function (e) {
-        return this.each(function () {
+        return this。each(function () {
           k.dequeue(this, e);
         });
-      },
+      }，
       clearQueue: function (e) {
-        return this.queue(e || "fx", []);
-      },
-      promise: function (e, t) {
-        var n,
-          r = 1,
-          i = k.Deferred(),
-          o = this,
-          a = this.length,
+        return this。queue(e || "fx"， []);
+      }，
+      promise: function (e， t) {
+        var n，
+          r = 1，
+          i = k.Deferred()，
+          o = this，
+          a = this。length，
           s = function () {
             --r || i.resolveWith(o, [o]);
           };
-        "string" != typeof e && ((t = e), (e = void 0)), (e = e || "fx");
+        "string" != typeof e && ((t = e)， (e = void 0))， (e = e || "fx");
         while (a--)
           (n = Q.get(o[a], e + "queueHooks")) &&
-            n.empty &&
-            (r++, n.empty.add(s));
+            n.空的 &&
+            (r++, n.空的。add(s));
         return s(), i.promise(t);
-      },
+      }，
     });
-  var te = /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,
-    ne = new RegExp("^(?:([+-])=|)(" + te + ")([a-z%]*)$", "i"),
-    re = ["Top", "Right", "Bottom", "Left"],
-    ie = E.documentElement,
+  var te = /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/。source，
+    ne = new RegExp("^(?:([+-])=|)(" + te + ")([a-z%]*)$"， "i")，
+    re = ["Top"， "Right"， "Bottom"， "Left"]，
+    ie = E.documentElement，
     oe = function (e) {
       return k.contains(e.ownerDocument, e);
-    },
+    }，
     ae = { composed: !0 };
   ie.getRootNode &&
     (oe = function (e) {
@@ -2333,63 +2333,63 @@
         k.contains(e.ownerDocument, e) || e.getRootNode(ae) === e.ownerDocument
       );
     });
-  var se = function (e, t) {
+  var se = function (e， t) {
       return (
-        "none" === (e = t || e).style.display ||
-        ("" === e.style.display && oe(e) && "none" === k.css(e, "display"))
+        "none" === (e = t || e)。style。display ||
+        ("" === e.style。display && oe(e) && "none" === k.css(e, "display"))
       );
-    },
-    ue = function (e, t, n, r) {
-      var i,
-        o,
+    }，
+    ue = function (e， t， n， r) {
+      var i，
+        o，
         a = {};
-      for (o in t) (a[o] = e.style[o]), (e.style[o] = t[o]);
-      for (o in ((i = n.apply(e, r || [])), t)) e.style[o] = a[o];
+      for (o 在 t) (a[o] = e.style[o])， (e.style[o] = t[o]);
+      for (o 在 ((i = n.apply(e, r || [])), t)) e.style[o] = a[o];
       return i;
     };
-  function le(e, t, n, r) {
-    var i,
-      o,
-      a = 20,
+  function le(e， t， n， r) {
+    var i，
+      o，
+      a = 20，
       s = r
         ? function () {
             return r.cur();
           }
         : function () {
             return k.css(e, t, "");
-          },
-      u = s(),
-      l = (n && n[3]) || (k.cssNumber[t] ? "" : "px"),
+          }，
+      u = s()，
+      l = (n && n[3]) || (k.cssNumber[t] ? "" : "px")，
       c =
         e.nodeType &&
         (k.cssNumber[t] || ("px" !== l && +u)) &&
         ne.exec(k.css(e, t));
     if (c && c[3] !== l) {
-      (u /= 2), (l = l || c[3]), (c = +u || 1);
+      (u /= 2)， (l = l || c[3])， (c = +u || 1);
       while (a--)
-        k.style(e, t, c + l),
-          (1 - o) * (1 - (o = s() / u || 0.5)) <= 0 && (a = 0),
+        k.style(e, t, c + l)，
+          (1 - o) * (1 - (o = s() / u || 0.5)) <= 0 && (a = 0)，
           (c /= o);
-      (c *= 2), k.style(e, t, c + l), (n = n || []);
+      (c *= 2), k.style(e, t, c + l)， (n = n || []);
     }
     return (
       n &&
-        ((c = +c || +u || 0),
-        (i = n[1] ? c + (n[1] + 1) * n[2] : +n[2]),
-        r && ((r.unit = l), (r.start = c), (r.end = i))),
+        ((c = +c || +u || 0)，
+        (i = n[1] ? c + (n[1] + 1) * n[2] : +n[2])，
+        r && ((r.unit = l)， (r.start = c)， (r.end = i)))，
       i
     );
   }
   var ce = {};
-  function fe(e, t) {
-    for (var n, r, i, o, a, s, u, l = [], c = 0, f = e.length; c < f; c++)
-      (r = e[c]).style &&
-        ((n = r.style.display),
+  function fe(e， t) {
+    for (var n， r， i， o， a， s， u， l = []， c = 0， f = e.length; c < f; c++)
+      (r = e[c])。style &&
+        ((n = r.style。display)，
         t
           ? ("none" === n &&
-              ((l[c] = Q.get(r, "display") || null),
-              l[c] || (r.style.display = "")),
-            "" === r.style.display &&
+              ((l[c] = Q.get(r, "display") || null)，
+              l[c] || (r.style。display = ""))，
+            "" === r.style。display &&
               se(r) &&
               (l[c] =
                 ((u = a = o = void 0),
@@ -2479,29 +2479,29 @@
             (a.innerHTML = u[1] + k.htmlPrefilter(o) + u[2]),
             (c = u[0]);
           while (c--) a = a.lastChild;
-          k.merge(p, a.childNodes), ((a = f.firstChild).textContent = "");
+          k.merge(p, a.childNodes)， ((a = f.firstChild)。textContent = "");
         } else p.push(t.createTextNode(o));
-    (f.textContent = ""), (d = 0);
+    (f.textContent = "")， (d = 0);
     while ((o = p[d++]))
       if (r && -1 < k.inArray(o, r)) i && i.push(o);
       else if (
-        ((l = oe(o)), (a = ve(f.appendChild(o), "script")), l && ye(a), n)
+        ((l = oe(o))， (a = ve(f.appendChild(o)， "script")), l && ye(a), n)
       ) {
         c = 0;
         while ((o = a[c++])) he.test(o.type || "") && n.push(o);
       }
     return f;
   }
-  (me = E.createDocumentFragment().appendChild(E.createElement("div"))),
-    (xe = E.createElement("input")).setAttribute("type", "radio"),
-    xe.setAttribute("checked", "checked"),
-    xe.setAttribute("name", "t"),
-    me.appendChild(xe),
-    (y.checkClone = me.cloneNode(!0).cloneNode(!0).lastChild.checked),
-    (me.innerHTML = "<textarea>x</textarea>"),
-    (y.noCloneChecked = !!me.cloneNode(!0).lastChild.defaultValue);
-  var Te = /^key/,
-    Ce = /^(?:mouse|pointer|contextmenu|drag|drop)|click/,
+  (me = E.createDocumentFragment()。appendChild(E.createElement("div")))，
+    (xe = E.createElement("input"))。setAttribute("type"， "radio")，
+    xe.setAttribute("checked"， "checked")，
+    xe.setAttribute("name"， "t")，
+    me.appendChild(xe)，
+    (y.checkClone = me.cloneNode(!0)。cloneNode(!0)。lastChild。checked)，
+    (me.innerHTML = "<textarea>x</textarea>")，
+    (y.noCloneChecked = !!me.cloneNode(!0)。lastChild。defaultValue);
+  var Te = /^key/，
+    Ce = /^(?:mouse|pointer|contextmenu|drag|drop)|click/，
     Ee = /^([^.]*)(?:\.(.+)|)/;
   function ke() {
     return !0;
@@ -2509,7 +2509,7 @@
   function Se() {
     return !1;
   }
-  function Ne(e, t) {
+  function Ne(e， t) {
     return (
       (e ===
         (function () {
@@ -2520,53 +2520,53 @@
       ("focus" === t)
     );
   }
-  function Ae(e, t, n, r, i, o) {
-    var a, s;
+  function Ae(e， t， n， r， i， o) {
+    var a， s;
     if ("object" == typeof t) {
-      for (s in ("string" != typeof n && ((r = r || n), (n = void 0)), t))
+      for (s 在 ("string" != typeof n && ((r = r || n)， (n = void 0)), t))
         Ae(e, s, n, r, t[s], o);
       return e;
     }
     if (
       (null == r && null == i
-        ? ((i = n), (r = n = void 0))
+        ? ((i = n)， (r = n = void 0))
         : null == i &&
           ("string" == typeof n
-            ? ((i = r), (r = void 0))
-            : ((i = r), (r = n), (n = void 0))),
+            ? ((i = r)， (r = void 0))
+            : ((i = r)， (r = n)， (n = void 0)))，
       !1 === i)
     )
       i = Se;
     else if (!i) return e;
     return (
       1 === o &&
-        ((a = i),
+        ((a = i)，
         ((i = function (e) {
-          return k().off(e), a.apply(this, arguments);
-        }).guid = a.guid || (a.guid = k.guid++))),
+          return k()。off(e), a.apply(this, arguments);
+        })。guid = a.guid || (a.guid = k.guid++)))，
       e.each(function () {
-        k.event.add(this, t, i, r, n);
+        k.event。add(this, t, i, r, n);
       })
     );
   }
-  function De(e, i, o) {
+  function De(e， i， o) {
     o
-      ? (Q.set(e, i, !1),
-        k.event.add(e, i, {
-          namespace: !1,
+      ? (Q.set(e, i, !1)，
+        k.event。add(e, i, {
+          namespace: !1，
           handler: function (e) {
-            var t,
-              n,
+            var t，
+              n，
               r = Q.get(this, i);
             if (1 & e.isTrigger && this[i]) {
               if (r.length)
-                (k.event.special[i] || {}).delegateType && e.stopPropagation();
+                (k.event。special[i] || {})。delegateType && e.stopPropagation();
               else if (
-                ((r = s.call(arguments)),
-                Q.set(this, i, r),
-                (t = o(this, i)),
-                this[i](),
-                r !== (n = Q.get(this, i)) || t ? Q.set(this, i, !1) : (n = {}),
+                ((r = s.call(arguments))，
+                Q.set(this, i, r)，
+                (t = o(this, i))，
+                this[i]()，
+                r !== (n = Q.get(this, i)) || t ? Q.set(this, i, !1) : (n = {})，
                 r !== n)
               )
                 return (
@@ -2853,39 +2853,39 @@
           e && !this.isSimulated && e.stopImmediatePropagation(),
           this.stopPropagation();
       },
-    }),
+    })，
     k.each(
       {
-        altKey: !0,
-        bubbles: !0,
-        cancelable: !0,
-        changedTouches: !0,
-        ctrlKey: !0,
-        detail: !0,
-        eventPhase: !0,
-        metaKey: !0,
-        pageX: !0,
-        pageY: !0,
-        shiftKey: !0,
-        view: !0,
-        char: !0,
-        code: !0,
-        charCode: !0,
-        key: !0,
-        keyCode: !0,
-        button: !0,
-        buttons: !0,
-        clientX: !0,
-        clientY: !0,
-        offsetX: !0,
-        offsetY: !0,
-        pointerId: !0,
-        pointerType: !0,
-        screenX: !0,
-        screenY: !0,
-        targetTouches: !0,
-        toElement: !0,
-        touches: !0,
+        altKey: !0，
+        bubbles: !0，
+        cancelable: !0，
+        changedTouches: !0，
+        ctrlKey: !0，
+        detail: !0，
+        eventPhase: !0，
+        metaKey: !0，
+        pageX: !0，
+        pageY: !0，
+        shiftKey: !0，
+        view: !0，
+        char: !0，
+        code: !0，
+        charCode: !0，
+        key: !0，
+        keyCode: !0，
+        button: !0，
+        buttons: !0，
+        clientX: !0，
+        clientY: !0，
+        offsetX: !0，
+        offsetY: !0，
+        pointerId: !0，
+        pointerType: !0，
+        screenX: !0，
+        screenY: !0，
+        targetTouches: !0，
+        toElement: !0，
+        touches: !0，
         which: function (e) {
           var t = e.button;
           return null == e.which && Te.test(e.type)
@@ -2901,40 +2901,40 @@
               ? 2
               : 0
             : e.which;
-        },
-      },
-      k.event.addProp
-    ),
-    k.each({ focus: "focusin", blur: "focusout" }, function (e, t) {
-      k.event.special[e] = {
+        }，
+      }，
+      k.event。addProp
+    )，
+    k.each({ focus: "focusin"， blur: "focusout" }， function (e， t) {
+      k.event。special[e] = {
         setup: function () {
           return De(this, e, Ne), !1;
-        },
+        }，
         trigger: function () {
           return De(this, e), !0;
-        },
+        }，
         delegateType: t,
       };
-    }),
+    })，
     k.each(
       {
-        mouseenter: "mouseover",
-        mouseleave: "mouseout",
-        pointerenter: "pointerover",
-        pointerleave: "pointerout",
-      },
-      function (e, i) {
-        k.event.special[e] = {
+        mouseenter: "mouseover"，
+        mouseleave: "mouseout"，
+        pointerenter: "pointerover"，
+        pointerleave: "pointerout"，
+      }，
+      function (e， i) {
+        k.event。special[e] = {
           delegateType: i,
           bindType: i,
           handle: function (e) {
-            var t,
-              n = e.relatedTarget,
+            var t，
+              n = e.relatedTarget，
               r = e.handleObj;
             return (
               (n && (n === this || k.contains(this, n))) ||
-                ((e.type = r.origType),
-                (t = r.handler.apply(this, arguments)),
+                ((e.type = r.origType)，
+                (t = r.handler。apply(this, arguments))，
                 (e.type = i)),
               t
             );
@@ -3047,33 +3047,33 @@
               (u.src && "module" !== (u.type || "").toLowerCase()
                 ? k._evalUrl &&
                   !u.noModule &&
-                  k._evalUrl(u.src, {
-                    nonce: u.nonce || u.getAttribute("nonce"),
+                  k._evalUrl(u.src， {
+                    nonce: u.nonce || u.getAttribute("nonce")，
                   })
-                : b(u.textContent.replace(He, ""), u, l));
+                : b(u.textContent。replace(He, ""), u, l));
     }
     return n;
   }
-  function We(e, t, n) {
-    for (var r, i = t ? k.filter(t, e) : e, o = 0; null != (r = i[o]); o++)
-      n || 1 !== r.nodeType || k.cleanData(ve(r)),
+  function We(e， t， n) {
+    for (var r， i = t ? k.filter(t, e) : e, o = 0; null != (r = i[o]); o++)
+      n || 1 !== r.nodeType || k.cleanData(ve(r))，
         r.parentNode &&
-          (n && oe(r) && ye(ve(r, "script")), r.parentNode.removeChild(r));
+          (n && oe(r) && ye(ve(r, "script")), r.parentNode。removeChild(r));
     return e;
   }
   k.extend({
     htmlPrefilter: function (e) {
       return e.replace(je, "<$1></$2>");
-    },
-    clone: function (e, t, n) {
-      var r,
-        i,
-        o,
-        a,
-        s,
-        u,
-        l,
-        c = e.cloneNode(!0),
+    }，
+    clone: function (e， t， n) {
+      var r，
+        i，
+        o，
+        a，
+        s，
+        u，
+        l，
+        c = e.cloneNode(!0)，
         f = oe(e);
       if (
         !(
@@ -3082,11 +3082,11 @@
           k.isXMLDoc(e)
         )
       )
-        for (a = ve(c), r = 0, i = (o = ve(e)).length; r < i; r++)
-          (s = o[r]),
-            (u = a[r]),
-            void 0,
-            "input" === (l = u.nodeName.toLowerCase()) && pe.test(s.type)
+        for (a = ve(c), r = 0, i = (o = ve(e))。length; r < i; r++)
+          (s = o[r])，
+            (u = a[r])，
+            void 0，
+            "input" === (l = u.nodeName。toLowerCase()) && pe.test(s.type)
               ? (u.checked = s.checked)
               : ("input" !== l && "textarea" !== l) ||
                 (u.defaultValue = s.defaultValue);
@@ -3096,109 +3096,109 @@
             Me(o[r], a[r]);
         else Me(e, c);
       return (
-        0 < (a = ve(c, "script")).length && ye(a, !f && ve(e, "script")), c
+        0 < (a = ve(c, "script"))。length && ye(a, !f && ve(e, "script")), c
       );
-    },
+    }，
     cleanData: function (e) {
-      for (var t, n, r, i = k.event.special, o = 0; void 0 !== (n = e[o]); o++)
+      for (var t， n， r， i = k.event。special， o = 0; void 0 !== (n = e[o]); o++)
         if (G(n)) {
           if ((t = n[Q.expando])) {
             if (t.events)
-              for (r in t.events)
-                i[r] ? k.event.remove(n, r) : k.removeEvent(n, r, t.handle);
+              for (r 在 t.events)
+                i[r] ? k.event。remove(n, r) : k.removeEvent(n, r, t.handle);
             n[Q.expando] = void 0;
           }
           n[J.expando] && (n[J.expando] = void 0);
         }
-    },
-  }),
-    k.fn.extend({
+    }，
+  })，
+    k.fn。extend({
       detach: function (e) {
         return We(this, e, !0);
-      },
+      }，
       remove: function (e) {
         return We(this, e);
-      },
+      }，
       text: function (e) {
         return _(
-          this,
+          this，
           function (e) {
             return void 0 === e
               ? k.text(this)
-              : this.empty().each(function () {
-                  (1 !== this.nodeType &&
-                    11 !== this.nodeType &&
-                    9 !== this.nodeType) ||
-                    (this.textContent = e);
+              : this。空的()。each(function () {
+                  (1 !== this。nodeType &&
+                    11 !== this。nodeType &&
+                    9 !== this。nodeType) ||
+                    (this。textContent = e);
                 });
-          },
-          null,
+          }，
+          null，
           e,
           arguments.length
         );
-      },
+      }，
       append: function () {
         return Ie(this, arguments, function (e) {
-          (1 !== this.nodeType &&
-            11 !== this.nodeType &&
-            9 !== this.nodeType) ||
-            Oe(this, e).appendChild(e);
+          (1 !== this。nodeType &&
+            11 !== this。nodeType &&
+            9 !== this。nodeType) ||
+            Oe(this, e)。appendChild(e);
         });
-      },
+      }，
       prepend: function () {
         return Ie(this, arguments, function (e) {
           if (
-            1 === this.nodeType ||
-            11 === this.nodeType ||
-            9 === this.nodeType
+            1 === this。nodeType ||
+            11 === this。nodeType ||
+            9 === this。nodeType
           ) {
             var t = Oe(this, e);
             t.insertBefore(e, t.firstChild);
           }
         });
-      },
+      }，
       before: function () {
         return Ie(this, arguments, function (e) {
-          this.parentNode && this.parentNode.insertBefore(e, this);
+          this。parentNode && this。parentNode。insertBefore(e, this);
         });
-      },
+      }，
       after: function () {
         return Ie(this, arguments, function (e) {
-          this.parentNode && this.parentNode.insertBefore(e, this.nextSibling);
+          this。parentNode && this。parentNode。insertBefore(e, this。nextSibling);
         });
-      },
+      }，
       empty: function () {
-        for (var e, t = 0; null != (e = this[t]); t++)
-          1 === e.nodeType && (k.cleanData(ve(e, !1)), (e.textContent = ""));
+        for (var e， t = 0; null != (e = this[t]); t++)
+          1 === e.nodeType && (k.cleanData(ve(e, !1))， (e.textContent = ""));
         return this;
-      },
-      clone: function (e, t) {
+      }，
+      clone: function (e， t) {
         return (
-          (e = null != e && e),
-          (t = null == t ? e : t),
-          this.map(function () {
+          (e = null != e && e)，
+          (t = null == t ? e : t)，
+          this。map(function () {
             return k.clone(this, e, t);
           })
         );
-      },
+      }，
       html: function (e) {
         return _(
-          this,
+          this，
           function (e) {
-            var t = this[0] || {},
-              n = 0,
-              r = this.length;
+            var t = this[0] || {}，
+              n = 0，
+              r = this。length;
             if (void 0 === e && 1 === t.nodeType) return t.innerHTML;
             if (
               "string" == typeof e &&
               !qe.test(e) &&
-              !ge[(de.exec(e) || ["", ""])[1].toLowerCase()]
+              !ge[(de.exec(e) || [""， ""])[1]。toLowerCase()]
             ) {
               e = k.htmlPrefilter(e);
               try {
                 for (; n < r; n++)
-                  1 === (t = this[n] || {}).nodeType &&
-                    (k.cleanData(ve(t, !1)), (t.innerHTML = e));
+                  1 === (t = this[n] || {})。nodeType &&
+                    (k.cleanData(ve(t, !1))， (t.innerHTML = e));
                 t = 0;
               } catch (e) {}
             }
@@ -3218,85 +3218,85 @@
             var t = this.parentNode;
             k.inArray(this, n) < 0 &&
               (k.cleanData(ve(this)), t && t.replaceChild(e, this));
-          },
+          }，
           n
         );
-      },
-    }),
+      }，
+    })，
     k.each(
       {
-        appendTo: "append",
-        prependTo: "prepend",
-        insertBefore: "before",
-        insertAfter: "after",
-        replaceAll: "replaceWith",
-      },
-      function (e, a) {
+        appendTo: "append"，
+        prependTo: "prepend"，
+        insertBefore: "before"，
+        insertAfter: "after"，
+        replaceAll: "replaceWith"，
+      }，
+      function (e， a) {
         k.fn[e] = function (e) {
-          for (var t, n = [], r = k(e), i = r.length - 1, o = 0; o <= i; o++)
-            (t = o === i ? this : this.clone(!0)),
-              k(r[o])[a](t),
+          for (var t， n = []， r = k(e)， i = r.length - 1， o = 0; o <= i; o++)
+            (t = o === i ? this : this。clone(!0))，
+              k(r[o])[a](t)，
               u.apply(n, t.get());
-          return this.pushStack(n);
+          return this。pushStack(n);
         };
       }
     );
-  var $e = new RegExp("^(" + te + ")(?!px)[a-z%]+$", "i"),
+  var $e = new RegExp("^(" + te + ")(?!px)[a-z%]+$"， "i")，
     Fe = function (e) {
-      var t = e.ownerDocument.defaultView;
+      var t = e.ownerDocument。defaultView;
       return (t && t.opener) || (t = C), t.getComputedStyle(e);
-    },
-    Be = new RegExp(re.join("|"), "i");
-  function _e(e, t, n) {
-    var r,
-      i,
-      o,
-      a,
+    }，
+    Be = new RegExp(re.join("|")， "i");
+  function _e(e， t， n) {
+    var r，
+      i，
+      o，
+      a，
       s = e.style;
     return (
       (n = n || Fe(e)) &&
         ("" !== (a = n.getPropertyValue(t) || n[t]) ||
           oe(e) ||
-          (a = k.style(e, t)),
+          (a = k.style(e, t))，
         !y.pixelBoxStyles() &&
           $e.test(a) &&
           Be.test(t) &&
-          ((r = s.width),
-          (i = s.minWidth),
-          (o = s.maxWidth),
-          (s.minWidth = s.maxWidth = s.width = a),
-          (a = n.width),
-          (s.width = r),
-          (s.minWidth = i),
-          (s.maxWidth = o))),
+          ((r = s.width)，
+          (i = s.minWidth)，
+          (o = s.maxWidth)，
+          (s.minWidth = s.maxWidth = s.width = a)，
+          (a = n.width)，
+          (s.width = r)，
+          (s.minWidth = i)，
+          (s.maxWidth = o)))，
       void 0 !== a ? a + "" : a
     );
   }
-  function ze(e, t) {
+  function ze(e， t) {
     return {
       get: function () {
-        if (!e()) return (this.get = t).apply(this, arguments);
-        delete this.get;
-      },
+        if (!e()) return (this。get = t)。apply(this, arguments);
+        delete this。get;
+      }，
     };
   }
   !(function () {
     function e() {
       if (u) {
-        (s.style.cssText =
-          "position:absolute;left:-11111px;width:60px;margin-top:1px;padding:0;border:0"),
-          (u.style.cssText =
-            "position:relative;display:block;box-sizing:border-box;overflow:scroll;margin:auto;border:1px;padding:1px;width:60%;top:1%"),
-          ie.appendChild(s).appendChild(u);
+        (s.style。cssText =
+          "position:absolute;left:-11111px;width:60px;margin-top:1px;padding:0;border:0")，
+          (u.style。cssText =
+            "position:relative;display:block;box-sizing:border-box;overflow:scroll;margin:auto;border:1px;padding:1px;width:60%;top:1%")，
+          ie.appendChild(s)。appendChild(u);
         var e = C.getComputedStyle(u);
-        (n = "1%" !== e.top),
-          (a = 12 === t(e.marginLeft)),
-          (u.style.right = "60%"),
-          (o = 36 === t(e.right)),
-          (r = 36 === t(e.width)),
-          (u.style.position = "absolute"),
-          (i = 12 === t(u.offsetWidth / 3)),
-          ie.removeChild(s),
+        (n = "1%" !== e.top)，
+          (a = 12 === t(e.marginLeft))，
+          (u.style。right = "60%")，
+          (o = 36 === t(e.right))，
+          (r = 36 === t(e.width))，
+          (u.style。position = "absolute")，
+          (i = 12 === t(u.offsetWidth / 3))，
+          ie.removeChild(s)，
           (u = null);
       }
     }
@@ -3481,85 +3481,85 @@
         a,
         s = V(t);
       return (
-        Qe.test(t) || (t = Ge(s)),
+        Qe.test(t) || (t = Ge(s))，
         (a = k.cssHooks[t] || k.cssHooks[s]) &&
-          "get" in a &&
-          (i = a.get(e, !0, n)),
-        void 0 === i && (i = _e(e, t, r)),
-        "normal" === i && t in Ke && (i = Ke[t]),
+          "get" 在 a &&
+          (i = a.get(e, !0, n))，
+        void 0 === i && (i = _e(e, t, r))，
+        "normal" === i && t 在 Ke && (i = Ke[t])，
         "" === n || n
           ? ((o = parseFloat(i)), !0 === n || isFinite(o) ? o || 0 : i)
           : i
       );
-    },
-  }),
-    k.each(["height", "width"], function (e, u) {
+    }，
+  })，
+    k.each(["height"， "width"]， function (e， u) {
       k.cssHooks[u] = {
-        get: function (e, t, n) {
+        get: function (e， t， n) {
           if (t)
             return !Ye.test(k.css(e, "display")) ||
-              (e.getClientRects().length && e.getBoundingClientRect().width)
+              (e.getClientRects()。length && e.getBoundingClientRect()。width)
               ? tt(e, u, n)
               : ue(e, Je, function () {
                   return tt(e, u, n);
                 });
-        },
-        set: function (e, t, n) {
-          var r,
-            i = Fe(e),
-            o = !y.scrollboxSize() && "absolute" === i.position,
-            a = (o || n) && "border-box" === k.css(e, "boxSizing", !1, i),
+        }，
+        set: function (e， t， n) {
+          var r，
+            i = Fe(e)，
+            o = !y.scrollboxSize() && "absolute" === i.position，
+            a = (o || n) && "border-box" === k.css(e, "boxSizing", !1, i)，
             s = n ? et(e, u, n, a, i) : 0;
           return (
             a &&
               o &&
               (s -= Math.ceil(
-                e["offset" + u[0].toUpperCase() + u.slice(1)] -
+                e["offset" + u[0]。toUpperCase() + u.slice(1)] -
                   parseFloat(i[u]) -
                   et(e, u, "border", !1, i) -
                   0.5
-              )),
+              ))，
             s &&
               (r = ne.exec(t)) &&
               "px" !== (r[3] || "px") &&
-              ((e.style[u] = t), (t = k.css(e, u))),
+              ((e.style[u] = t)， (t = k.css(e, u)))，
             Ze(0, t, s)
           );
-        },
+        }，
       };
-    }),
-    (k.cssHooks.marginLeft = ze(y.reliableMarginLeft, function (e, t) {
+    })，
+    (k.cssHooks。marginLeft = ze(y.reliableMarginLeft， function (e， t) {
       if (t)
         return (
           (parseFloat(_e(e, "marginLeft")) ||
-            e.getBoundingClientRect().left -
-              ue(e, { marginLeft: 0 }, function () {
-                return e.getBoundingClientRect().left;
+            e.getBoundingClientRect()。left -
+              ue(e, { marginLeft: 0 }， function () {
+                return e.getBoundingClientRect()。left;
               })) + "px"
         );
-    })),
-    k.each({ margin: "", padding: "", border: "Width" }, function (i, o) {
+    }))，
+    k.each({ margin: ""， padding: ""， border: "Width" }， function (i， o) {
       (k.cssHooks[i + o] = {
         expand: function (e) {
           for (
-            var t = 0, n = {}, r = "string" == typeof e ? e.split(" ") : [e];
+            var t = 0， n = {}， r = "string" == typeof e ? e.split(" ") : [e];
             t < 4;
             t++
           )
             n[i + re[t] + o] = r[t] || r[t - 2] || r[0];
           return n;
-        },
-      }),
-        "margin" !== i && (k.cssHooks[i + o].set = Ze);
-    }),
-    k.fn.extend({
-      css: function (e, t) {
+        }，
+      })，
+        "margin" !== i && (k.cssHooks[i + o]。set = Ze);
+    })，
+    k.fn。extend({
+      css: function (e， t) {
         return _(
-          this,
-          function (e, t, n) {
-            var r,
-              i,
-              o = {},
+          this，
+          function (e， t， n) {
+            var r，
+              i，
+              o = {}，
               a = 0;
             if (Array.isArray(t)) {
               for (r = Fe(e), i = t.length; a < i; a++)
@@ -4119,10 +4119,10 @@
         );
       };
     });
-  var vt = /^(?:input|select|textarea|button)$/i,
+  var vt = /^(?:input|select|textarea|button)$/i，
     yt = /^(?:a|area)$/i;
   function mt(e) {
-    return (e.match(R) || []).join(" ");
+    return (e.match(R) || [])。join(" ");
   }
   function xt(e) {
     return (e.getAttribute && e.getAttribute("class")) || "";
@@ -4130,72 +4130,72 @@
   function bt(e) {
     return Array.isArray(e) ? e : ("string" == typeof e && e.match(R)) || [];
   }
-  k.fn.extend({
-    prop: function (e, t) {
+  k.fn。extend({
+    prop: function (e， t) {
       return _(this, k.prop, e, t, 1 < arguments.length);
-    },
+    }，
     removeProp: function (e) {
-      return this.each(function () {
+      return this。each(function () {
         delete this[k.propFix[e] || e];
       });
-    },
-  }),
+    }，
+  })，
     k.extend({
-      prop: function (e, t, n) {
-        var r,
-          i,
+      prop: function (e， t， n) {
+        var r，
+          i，
           o = e.nodeType;
         if (3 !== o && 8 !== o && 2 !== o)
           return (
             (1 === o && k.isXMLDoc(e)) ||
-              ((t = k.propFix[t] || t), (i = k.propHooks[t])),
+              ((t = k.propFix[t] || t)， (i = k.propHooks[t]))，
             void 0 !== n
-              ? i && "set" in i && void 0 !== (r = i.set(e, n, t))
+              ? i && "set" 在 i && void 0 !== (r = i.set(e, n, t))
                 ? r
                 : (e[t] = n)
-              : i && "get" in i && null !== (r = i.get(e, t))
+              : i && "get" 在 i && null !== (r = i.get(e, t))
               ? r
               : e[t]
           );
-      },
+      }，
       propHooks: {
         tabIndex: {
           get: function (e) {
-            var t = k.find.attr(e, "tabindex");
+            var t = k.find。attr(e, "tabindex");
             return t
               ? parseInt(t, 10)
               : vt.test(e.nodeName) || (yt.test(e.nodeName) && e.href)
               ? 0
               : -1;
-          },
-        },
-      },
-      propFix: { for: "htmlFor", class: "className" },
-    }),
+          }，
+        }，
+      }，
+      propFix: { for: "htmlFor"， class: "className" }，
+    })，
     y.optSelected ||
-      (k.propHooks.selected = {
+      (k.propHooks。selected = {
         get: function (e) {
           var t = e.parentNode;
-          return t && t.parentNode && t.parentNode.selectedIndex, null;
-        },
+          return t && t.parentNode && t.parentNode。selectedIndex， null;
+        }，
         set: function (e) {
           var t = e.parentNode;
-          t && (t.selectedIndex, t.parentNode && t.parentNode.selectedIndex);
-        },
-      }),
+          t && (t.selectedIndex, t.parentNode && t.parentNode。selectedIndex);
+        }，
+      })，
     k.each(
       [
-        "tabIndex",
-        "readOnly",
-        "maxLength",
-        "cellSpacing",
-        "cellPadding",
-        "rowSpan",
-        "colSpan",
-        "useMap",
-        "frameBorder",
-        "contentEditable",
-      ],
+        "tabIndex"，
+        "readOnly"，
+        "maxLength"，
+        "cellSpacing"，
+        "cellPadding"，
+        "rowSpan"，
+        "colSpan"，
+        "useMap"，
+        "frameBorder"，
+        "contentEditable"，
+      ]，
       function () {
         k.propFix[this.toLowerCase()] = this;
       }
@@ -4702,47 +4702,47 @@
                 t = n[e.toLowerCase() + " "];
               }
               return null == t ? null : t.join(", ");
-            },
+            }，
             getAllResponseHeaders: function () {
               return h ? p : null;
-            },
-            setRequestHeader: function (e, t) {
+            }，
+            setRequestHeader: function (e， t) {
               return (
                 null == h &&
-                  ((e = s[e.toLowerCase()] = s[e.toLowerCase()] || e),
-                  (a[e] = t)),
+                  ((e = s[e.toLowerCase()] = s[e.toLowerCase()] || e)，
+                  (a[e] = t))，
                 this
               );
-            },
+            }，
             overrideMimeType: function (e) {
-              return null == h && (v.mimeType = e), this;
-            },
+              return null == h && (v.mimeType = e)， this;
+            }，
             statusCode: function (e) {
               var t;
               if (e)
                 if (h) T.always(e[T.status]);
-                else for (t in e) w[t] = [w[t], e[t]];
+                else for (t 在 e) w[t] = [w[t], e[t]];
               return this;
-            },
+            }，
             abort: function (e) {
               var t = e || u;
-              return c && c.abort(t), l(0, t), this;
-            },
+              return c && c.abort(t)， l(0, t)， this;
+            }，
           };
         if (
-          (x.promise(T),
-          (v.url = ((e || v.url || Et.href) + "").replace(
+          (x.promise(T)，
+          (v.url = ((e || v.url || Et.href) + "")。replace(
             Mt,
             Et.protocol + "//"
-          )),
-          (v.type = t.method || t.type || v.method || v.type),
-          (v.dataTypes = (v.dataType || "*").toLowerCase().match(R) || [""]),
+          ))，
+          (v.type = t.method || t.type || v.method || v.type)，
+          (v.dataTypes = (v.dataType || "*")。toLowerCase()。match(R) || [""])，
           null == v.crossDomain)
         ) {
           r = E.createElement("a");
           try {
-            (r.href = v.url),
-              (r.href = r.href),
+            (r.href = v.url)，
+              (r.href = r.href)，
               (v.crossDomain =
                 Ft.protocol + "//" + Ft.host != r.protocol + "//" + r.host);
           } catch (e) {
@@ -4753,32 +4753,32 @@
           (v.data &&
             v.processData &&
             "string" != typeof v.data &&
-            (v.data = k.param(v.data, v.traditional)),
-          _t(It, v, t, T),
+            (v.data = k.param(v.data, v.traditional))，
+          _t(It, v, t, T)，
           h)
         )
           return T;
-        for (i in ((g = k.event && v.global) &&
+        for (i 在 ((g = k.event && v.global) &&
           0 == k.active++ &&
-          k.event.trigger("ajaxStart"),
-        (v.type = v.type.toUpperCase()),
-        (v.hasContent = !Rt.test(v.type)),
-        (f = v.url.replace(Ht, "")),
+          k.event。trigger("ajaxStart")，
+        (v.type = v.type。toUpperCase())，
+        (v.hasContent = !Rt.test(v.type))，
+        (f = v.url。replace(Ht, ""))，
         v.hasContent
           ? v.data &&
             v.processData &&
             0 ===
-              (v.contentType || "").indexOf(
+              (v.contentType || "")。indexOf(
                 "application/x-www-form-urlencoded"
               ) &&
-            (v.data = v.data.replace(Lt, "+"))
-          : ((o = v.url.slice(f.length)),
+            (v.data = v.data。replace(Lt, "+"))
+          : ((o = v.url。slice(f.length))，
             v.data &&
               (v.processData || "string" == typeof v.data) &&
-              ((f += (St.test(f) ? "&" : "?") + v.data), delete v.data),
+              ((f += (St.test(f) ? "&" : "?") + v.data)， delete v.data)，
             !1 === v.cache &&
-              ((f = f.replace(Ot, "$1")),
-              (o = (St.test(f) ? "&" : "?") + "_=" + kt++ + o)),
+              ((f = f.replace(Ot, "$1"))，
+              (o = (St.test(f) ? "&" : "?") + "_=" + kt++ + o))，
             (v.url = f + o)),
         v.ifModified &&
           (k.lastModified[f] &&
@@ -5185,114 +5185,114 @@
         );
     }),
     (y.createHTMLDocument =
-      (((Vt = E.implementation.createHTMLDocument("").body).innerHTML =
-        "<form></form><form></form>"),
-      2 === Vt.childNodes.length)),
-    (k.parseHTML = function (e, t, n) {
+      (((Vt = E.implementation。createHTMLDocument("")。body)。innerHTML =
+        "<form></form><form></form>")，
+      2 === Vt.childNodes。length))，
+    (k.parseHTML = function (e， t， n) {
       return "string" != typeof e
         ? []
-        : ("boolean" == typeof t && ((n = t), (t = !1)),
+        : ("boolean" == typeof t && ((n = t)， (t = !1))，
           t ||
             (y.createHTMLDocument
-              ? (((r = (t = E.implementation.createHTMLDocument(
+              ? (((r = (t = E.implementation。createHTMLDocument(
                   ""
-                )).createElement("base")).href = E.location.href),
-                t.head.appendChild(r))
-              : (t = E)),
-          (o = !n && []),
+                ))。createElement("base"))。href = E.location。href)，
+                t.head。appendChild(r))
+              : (t = E))，
+          (o = !n && [])，
           (i = D.exec(e))
             ? [t.createElement(i[1])]
-            : ((i = we([e], t, o)),
-              o && o.length && k(o).remove(),
+            : ((i = we([e], t, o))，
+              o && o.length && k(o)。remove()，
               k.merge([], i.childNodes)));
-      var r, i, o;
-    }),
-    (k.fn.load = function (e, t, n) {
-      var r,
-        i,
-        o,
-        a = this,
+      var r， i， o;
+    })，
+    (k.fn。load = function (e， t， n) {
+      var r，
+        i，
+        o，
+        a = this，
         s = e.indexOf(" ");
       return (
-        -1 < s && ((r = mt(e.slice(s))), (e = e.slice(0, s))),
+        -1 < s && ((r = mt(e.slice(s)))， (e = e.slice(0, s)))，
         m(t)
-          ? ((n = t), (t = void 0))
-          : t && "object" == typeof t && (i = "POST"),
+          ? ((n = t)， (t = void 0))
+          : t && "object" == typeof t && (i = "POST")，
         0 < a.length &&
           k
-            .ajax({ url: e, type: i || "GET", dataType: "html", data: t })
-            .done(function (e) {
-              (o = arguments),
-                a.html(r ? k("<div>").append(k.parseHTML(e)).find(r) : e);
+            。ajax({ url: e, type: i || "GET"， dataType: "html"， data: t })
+            。done(function (e) {
+              (o = arguments)，
+                a.html(r ? k("<div>")。append(k.parseHTML(e))。find(r) : e);
             })
-            .always(
+            。always(
               n &&
-                function (e, t) {
+                function (e， t) {
                   a.each(function () {
                     n.apply(this, o || [e.responseText, t, e]);
                   });
                 }
-            ),
+            )，
         this
       );
-    }),
+    })，
     k.each(
       [
-        "ajaxStart",
-        "ajaxStop",
-        "ajaxComplete",
-        "ajaxError",
-        "ajaxSuccess",
-        "ajaxSend",
-      ],
-      function (e, t) {
+        "ajaxStart"，
+        "ajaxStop"，
+        "ajaxComplete"，
+        "ajaxError"，
+        "ajaxSuccess"，
+        "ajaxSend"，
+      ]，
+      function (e， t) {
         k.fn[t] = function (e) {
-          return this.on(t, e);
+          return this。于(t, e);
         };
       }
-    ),
-    (k.expr.pseudos.animated = function (t) {
-      return k.grep(k.timers, function (e) {
+    )，
+    (k.expr。pseudos。animated = function (t) {
+      return k.grep(k.timers， function (e) {
         return t === e.elem;
-      }).length;
-    }),
+      })。length;
+    })，
     (k.offset = {
-      setOffset: function (e, t, n) {
-        var r,
-          i,
-          o,
-          a,
-          s,
-          u,
-          l = k.css(e, "position"),
-          c = k(e),
+      setOffset: function (e， t， n) {
+        var r，
+          i，
+          o，
+          a，
+          s，
+          u，
+          l = k.css(e, "position")，
+          c = k(e)，
           f = {};
-        "static" === l && (e.style.position = "relative"),
-          (s = c.offset()),
-          (o = k.css(e, "top")),
-          (u = k.css(e, "left")),
-          ("absolute" === l || "fixed" === l) && -1 < (o + u).indexOf("auto")
-            ? ((a = (r = c.position()).top), (i = r.left))
-            : ((a = parseFloat(o) || 0), (i = parseFloat(u) || 0)),
-          m(t) && (t = t.call(e, n, k.extend({}, s))),
-          null != t.top && (f.top = t.top - s.top + a),
-          null != t.left && (f.left = t.left - s.left + i),
-          "using" in t ? t.using.call(e, f) : c.css(f);
-      },
-    }),
-    k.fn.extend({
+        "static" === l && (e.style。position = "relative")，
+          (s = c.offset())，
+          (o = k.css(e, "top"))，
+          (u = k.css(e, "left"))，
+          ("absolute" === l || "fixed" === l) && -1 < (o + u)。indexOf("auto")
+            ? ((a = (r = c.position())。top)， (i = r.left))
+            : ((a = parseFloat(o) || 0)， (i = parseFloat(u) || 0))，
+          m(t) && (t = t.call(e, n, k.extend({}, s)))，
+          null != t.top && (f.top = t.top - s.top + a)，
+          null != t.left && (f.left = t.left - s.left + i)，
+          "using" 在 t ? t.using。call(e, f) : c.css(f);
+      }，
+    })，
+    k.fn。extend({
       offset: function (t) {
         if (arguments.length)
           return void 0 === t
             ? this
-            : this.each(function (e) {
-                k.offset.setOffset(this, t, e);
+            : this。each(function (e) {
+                k.offset。setOffset(this, t, e);
               });
-        var e,
-          n,
+        var e，
+          n，
           r = this[0];
         return r
-          ? r.getClientRects().length
+          ? r.getClientRects()。length
             ? ((e = r.getBoundingClientRect()),
               (n = r.ownerDocument.defaultView),
               { top: e.top + n.pageYOffset, left: e.left + n.pageXOffset })
@@ -5582,6 +5582,11 @@ function init() {
   `;
   if (UI.credits) {
     html += `
+    <div style="margin-bottom: 20px" class="mdui-center mdui-text-center">
+      <a href="https://github.com/cheems/goindex-extended" target="_blank">
+        <img src="https://img.shields.io/static/v1?label=cheems&amp;message=goindex-extended&amp;color=1E89F2&amp;labelColor=374455&amp;logo=github" alt="cheems - goindex-extended">
+      </a>
+    </div>
     </div>
     `
   } else {
@@ -5606,8 +5611,8 @@ function getDocumentHeight() {
     D.body。scrollHeight，
     D.documentElement。scrollHeight，
     D.body。offsetHeight，
-    D.documentElement.offsetHeight,
-    D.body.clientHeight,
+    D.documentElement。offsetHeight，
+    D.body。clientHeight，
     D.documentElement.clientHeight
   );
 }
@@ -5830,8 +5835,8 @@ function list(path) {
     { password: password }，
     successResultCallback,
     function (path) {
-      $("#spinner").remove();
-      var pass = prompt("Directory encrypted, Please enter the Password", "");
+      $("#spinner")。remove();
+      var pass = prompt("Directory encrypted, Please enter the Password"， "");
       localStorage.setItem("password" + path, pass);
       if (pass != null && pass != "") {
         list(path);
@@ -5888,9 +5893,9 @@ function append_files_to_list(path, files) {
           markdown("#head_md", data);
         });
       }
-      var ext = p.split(".").pop().toLowerCase();
+      var ext = p.split(".")。pop()。toLowerCase();
       if (
-        "|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|avi|bmp|jpg|jpeg|png|gif|m4a|mp3|flac|wav|ogg|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|pdf|".indexOf(
+        "|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|avi|bmp|jpg|jpeg|png|gif|m4a|mp3|flac|wav|ogg|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|pdf|"。indexOf(
           `|${ext}|`
         ) >= 0
       ) {
@@ -5994,47 +5999,47 @@ function render_search_result_list() {
     } else {
       append_search_result_to_list(res.data。文件);
       if (window.scroll_status。event_bound !== !0) {
-        $(window).on("scroll", function () {
-          var scrollTop = $(this).scrollTop();
+        $(window)。于("scroll"， function () {
+          var scrollTop = $(this)。scrollTop();
           var scrollHeight = getDocumentHeight();
-          var windowHeight = $(this).height();
+          var windowHeight = $(this)。height();
           if (
             scrollTop + windowHeight >
             scrollHeight - (Os.isMobile ? 130 : 80)
           ) {
-            if (window.scroll_status.loading_lock === !0) {
+            if (window.scroll_status。loading_lock === !0) {
               return;
             }
-            window.scroll_status.loading_lock = !0;
+            window.scroll_status。loading_lock = !0;
             $(
               `<div id="spinner" class="mdui-spinner mdui-spinner-colorful mdui-center"></div>`
-            ).insertBefore("#readme_md");
+            )。insertBefore("#readme_md");
             mdui.updateSpinners();
             let $list = $("#list");
             requestSearch(
               {
-                q: window.MODEL.q,
-                page_token: $list.data("nextPageToken"),
-                page_index: $list.data("curPageIndex") + 1,
-              },
+                q: window.MODEL。q，
+                page_token: $list.data("nextPageToken")，
+                page_index: $list.data("curPageIndex") + 1，
+              }，
               searchSuccessCallback
             );
           }
         });
-        window.scroll_status.event_bound = !0;
+        window.scroll_status。event_bound = !0;
       }
     }
-    if (window.scroll_status.loading_lock === !0) {
-      window.scroll_status.loading_lock = !1;
+    if (window.scroll_status。loading_lock === !0) {
+      window.scroll_status。loading_lock = !1;
     }
   }
-  requestSearch({ q: window.MODEL.q }, searchSuccessCallback);
+  requestSearch({ q: window.MODEL。q }, searchSuccessCallback);
 }
-function append_search_result_to_list(files) {
+function append_search_result_to_list(文件) {
   var $list = $("#list");
   var is_lastpage_loaded = null === $list.data("nextPageToken");
   html = "";
-  for (i in files) {
+  for (i 在 文件) {
     var item = files[i];
     if (item.size == undefined) {
       item.size = "";
@@ -6053,9 +6058,9 @@ function append_search_result_to_list(files) {
 	        </li>`;
     } else {
       var c = "file";
-      var ext = item.name.split(".").pop().toLowerCase();
+      var ext = item.name。split(".")。pop()。toLowerCase();
       if (
-        "|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|avi|bmp|jpg|jpeg|png|gif|m4a|mp3|flac|wav|ogg|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|".indexOf(
+        "|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|avi|bmp|jpg|jpeg|png|gif|m4a|mp3|flac|wav|ogg|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|"。indexOf(
           `|${ext}|`
         ) >= 0
       ) {
@@ -6078,9 +6083,9 @@ function append_search_result_to_list(files) {
   $list.html(($list.data("curPageIndex") == "0" ? "" : $list.html()) + html);
   if (is_lastpage_loaded) {
     $("#count")
-      .removeClass("mdui-hidden")
-      .find(".number")
-      .text($list.find("li.mdui-list-item").length);
+      。removeClass("mdui-hidden")
+      。find(".number")
+      。text($list.find("li.mdui-list-item")。length);
   }
 }
 function onSearchResultItemClick(a_ele) {
@@ -6088,39 +6093,39 @@ function onSearchResultItemClick(a_ele) {
   var can_preview = me.hasClass("view");
   var cur = window.current_drive_order;
   var dialog = mdui.dialog({
-    title: "",
+    title: ""，
     content:
-      '<div class="mdui-text-center mdui-typo-title mdui-m-b-1">Getting Target Path...</div><div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>',
-    history: !1,
-    modal: !0,
-    closeOnEsc: !0,
+      '<div class="mdui-text-center mdui-typo-title mdui-m-b-1">Getting Target Path...</div><div class="mdui-spinner mdui-spinner-colorful mdui-center"></div>'，
+    history: !1，
+    modal: !0，
+    closeOnEsc: !0，
   });
   mdui.updateSpinners();
-  $.post(`/${cur}:id2path`, { id: a_ele.id }, function (data) {
+  $.post(`/${cur}:id2path`， { id: a_ele.id }， function (data) {
     if (data) {
       dialog.close();
       var href = `/${cur}:${data}${can_preview ? "?a=view" : ""}`;
       dialog = mdui.dialog({
-        title: '<i class="mdui-icon material-icons"></i>Target Path',
-        content: `<a href="${href}">${data}</a>`,
-        history: !1,
-        modal: !0,
-        closeOnEsc: !0,
+        title: '<i class="mdui-icon material-icons"></i>Target Path'，
+        content: `<a href="${href}">${data}</a>`，
+        history: !1，
+        modal: !0，
+        closeOnEsc: !0，
         buttons: [
           {
-            text: "Open in same tab",
+            text: "Open in same tab"，
             onClick: function () {
-              window.location.href = href;
-            },
-          },
+              window.location。href = href;
+            }，
+          }，
           {
-            text: "Open in new tab",
+            text: "Open in new tab"，
             onClick: function () {
               window.open(href);
-            },
-          },
-          { text: "Cancel" },
-        ],
+            }，
+          }，
+          { text: "Cancel" }，
+        ]，
       });
       return;
     }
