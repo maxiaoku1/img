@@ -1,5 +1,5 @@
 /*! jQuery v3.4.1 | (c) JS Foundation and other contributors | jquery.org/license */
-!(function (e, t) {
+!(function (e， t) {
   "use strict";
   "object" == typeof module && "object" == typeof module.exports
     ? (module.exports = e.document
@@ -10,37 +10,37 @@
             return t(e);
           })
     : t(e);
-})("undefined" != typeof window ? window : this, function (C, e) {
+})("undefined" != typeof window ? window : this， function (C， e) {
   "use strict";
-  var t = [],
-    E = C.document,
-    r = Object.getPrototypeOf,
-    s = t.slice,
-    g = t.concat,
-    u = t.push,
-    i = t.indexOf,
-    n = {},
-    o = n.toString,
-    v = n.hasOwnProperty,
-    a = v.toString,
-    l = a.call(Object),
-    y = {},
+  var t = []，
+    E = C.document，
+    r = Object.getPrototypeOf，
+    s = t.slice，
+    g = t.concat，
+    u = t.push，
+    i = t.indexOf，
+    n = {}，
+    o = n.toString，
+    v = n.hasOwnProperty，
+    a = v.toString，
+    l = a.call(Object)，
+    y = {}，
     m = function (e) {
       return "function" == typeof e && "number" != typeof e.nodeType;
-    },
+    }，
     x = function (e) {
       return null != e && e === e.window;
-    },
-    c = { type: !0, src: !0, nonce: !0, noModule: !0 };
-  function b(e, t, n) {
-    var r,
+    }，
+    c = { type: !0， src: !0， nonce: !0， noModule: !0 };
+  function b(e， t， n) {
+    var r，
       i,
-      o = (n = n || E).createElement("script");
+      o = (n = n || E)。createElement("script");
     if (((o.text = e), t))
-      for (r in c)
+      for (r 在 c)
         (i = t[r] || (t.getAttribute && t.getAttribute(r))) &&
           o.setAttribute(r, i);
-    n.head.appendChild(o).parentNode.removeChild(o);
+    n.head。appendChild(o)。parentNode。removeChild(o);
   }
   function w(e) {
     return null == e
@@ -49,13 +49,13 @@
       ? n[o.call(e)] || "object"
       : typeof e;
   }
-  var f = "3.4.1",
-    k = function (e, t) {
-      return new k.fn.init(e, t);
-    },
+  var f = "3.4.1"，
+    k = function (e， t) {
+      return new k.fn。init(e, t);
+    }，
     p = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
   function d(e) {
-    var t = !!e && "length" in e && e.length,
+    var t = !!e && "length" 在 e && e.length，
       n = w(e);
     return (
       !m(e) &&
@@ -5714,32 +5714,32 @@ function nav(path) {
         </button>`;
   html += search_bar;
   
-  $("#nav").html(html);
+  $("#nav")。html(html);
   mdui.mutation();
   mdui.updateTextFields();
 }
-function requestListPath(path, params, resultCallback, authErrorCallback) {
+function requestListPath(path， params， resultCallback， authErrorCallback) {
   var p = {
-    password: params.password || null,
-    page_token: params.page_token || null,
-    page_index: params.page_index || 0,
+    password: params.password || null，
+    page_token: params.page_token || null，
+    page_index: params.page_index || 0，
   };
-  $.post(path, p, function (data, status) {
+  $.post(path, p, function (data， status) {
     var res = jQuery.parseJSON(data);
-    if (res && res.error && res.error.code == "401") {
+    if (res && res.error && res.error。code == "401") {
       if (authErrorCallback) authErrorCallback(path);
     } else if (res && res.data) {
       if (resultCallback) resultCallback(res, path, p);
     }
   });
 }
-function requestSearch(params, resultCallback) {
+function requestSearch(params， resultCallback) {
   var p = {
-    q: params.q || null,
-    page_token: params.page_token || null,
-    page_index: params.page_index || 0,
+    q: params.q || null，
+    page_token: params.page_token || null，
+    page_index: params.page_index || 0，
   };
-  $.post(`/${window.current_drive_order}:search`, p, function (data, status) {
+  $.post(`/${window.current_drive_order}:search`, p, function (data， status) {
     var res = jQuery.parseJSON(data);
     if (res && res.data) {
       if (resultCallback) resultCallback(res, p);
@@ -5756,7 +5756,7 @@ function list(path) {
 	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-3 mdui-text-right">
-		日期
+	    日期
 	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-2 mdui-text-right">
@@ -5764,7 +5764,7 @@ function list(path) {
 	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
 	    </div>
       <div class="mdui-col-sm-2 mdui-text-right dummyclass">
-        操作
+            操作
   <i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
     </div>  
 	    </li> 
@@ -5774,65 +5774,65 @@ function list(path) {
 	  <ul id="list" class="mdui-list"> 
 	  </ul> 
 	`;
-  $("#content").html(content);
+  $("#content")。html(content);
   var password = localStorage.getItem("password" + path);
-  $("#list").html(
+  $("#list")。html(
     `<div class="mdui-progress"><div class="mdui-progress-indeterminate"></div></div>`
   );
-  $("#readme_md").hide().html("");
-  $("#head_md").hide().html("");
-  function successResultCallback(res, path, prevReqParams) {
+  $("#readme_md")。hide()。html("");
+  $("#head_md")。hide()。html("");
+  function successResultCallback(res， path， prevReqParams) {
     $("#list")
-      .data("nextPageToken", res.nextPageToken)
-      .data("curPageIndex", res.curPageIndex);
-    $("#spinner").remove();
+      。data("nextPageToken", res.nextPageToken)
+      。data("curPageIndex", res.curPageIndex);
+    $("#spinner")。remove();
     if (res.nextPageToken === null) {
-      $(window).off("scroll");
-      window.scroll_status.event_bound = !1;
-      window.scroll_status.loading_lock = !1;
-      append_files_to_list(path, res.data.files);
+      $(window)。off("scroll");
+      window.scroll_status。event_bound = !1;
+      window.scroll_status。loading_lock = !1;
+      append_files_to_list(path, res.data。文件);
     } else {
-      append_files_to_list(path, res.data.files);
-      if (window.scroll_status.event_bound !== !0) {
-        $(window).on("scroll", function () {
-          var scrollTop = $(this).scrollTop();
+      append_files_to_list(path, res.data。文件);
+      if (window.scroll_status。event_bound !== !0) {
+        $(window)。于("scroll"， function () {
+          var scrollTop = $(this)。scrollTop();
           var scrollHeight = getDocumentHeight();
-          var windowHeight = $(this).height();
+          var windowHeight = $(this)。height();
           if (
             scrollTop + windowHeight >
             scrollHeight - (Os.isMobile ? 130 : 80)
           ) {
-            if (window.scroll_status.loading_lock === !0) {
+            if (window.scroll_status。loading_lock === !0) {
               return;
             }
-            window.scroll_status.loading_lock = !0;
+            window.scroll_status。loading_lock = !0;
             $(
               `<div id="spinner" class="mdui-spinner mdui-spinner-colorful mdui-center"></div>`
-            ).insertBefore("#readme_md");
+            )。insertBefore("#readme_md");
             mdui.updateSpinners();
             let $list = $("#list");
             requestListPath(
               path,
               {
-                password: prevReqParams.password,
-                page_token: $list.data("nextPageToken"),
-                page_index: $list.data("curPageIndex") + 1,
-              },
+                password: prevReqParams.password，
+                page_token: $list.data("nextPageToken")，
+                page_index: $list.data("curPageIndex") + 1，
+              }，
               successResultCallback,
               null
             );
           }
         });
-        window.scroll_status.event_bound = !0;
+        window.scroll_status。event_bound = !0;
       }
     }
-    if (window.scroll_status.loading_lock === !0) {
-      window.scroll_status.loading_lock = !1;
+    if (window.scroll_status。loading_lock === !0) {
+      window.scroll_status。loading_lock = !1;
     }
   }
   requestListPath(
     path,
-    { password: password },
+    { password: password }，
     successResultCallback,
     function (path) {
       $("#spinner").remove();
