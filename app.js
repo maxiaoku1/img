@@ -6148,57 +6148,57 @@ function get_file(path, file, callback) {
   }
 }
 function file(path) {
-  var name = path.split("/").pop();
+  var name = path.split("/")。pop();
   var ext = name
-    .split(".")
-    .pop()
-    .toLowerCase()
-    .replace(`?a=view`, "")
-    .toLowerCase();
-  if ("|html|php|css|go|java|js|json|txt|sh|md|".indexOf(`|${ext}|`) >= 0) {
+    。split(".")
+    。pop()
+    。toLowerCase()
+    。replace(`?a=view`， "")
+    。toLowerCase();
+  if ("|html|php|css|go|java|js|json|txt|sh|md|"。indexOf(`|${ext}|`) >= 0) {
     return file_code(path);
   }
-  if ("|mp4|webm|avi|".indexOf(`|${ext}|`) >= 0) {
+  if ("|mp4|webm|avi|"。indexOf(`|${ext}|`) >= 0) {
     return file_video(path);
   }
-  if ("|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|".indexOf(`|${ext}|`) >= 0) {
+  if ("|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|"。indexOf(`|${ext}|`) >= 0) {
     return file_video(path);
   }
-  if ("|mp3|flac|wav|ogg|m4a|".indexOf(`|${ext}|`) >= 0) {
+  if ("|mp3|flac|wav|ogg|m4a|"。indexOf(`|${ext}|`) >= 0) {
     return file_audio(path);
   }
-  if ("|bmp|jpg|jpeg|png|gif|".indexOf(`|${ext}|`) >= 0) {
+  if ("|bmp|jpg|jpeg|png|gif|"。indexOf(`|${ext}|`) >= 0) {
     return file_image(path);
   }
   if ("pdf" === ext) return file_pdf(path);
 }
 function file_code(path) {
   var type = {
-    html: "html",
-    php: "php",
-    css: "css",
-    go: "golang",
-    java: "java",
-    js: "javascript",
-    json: "json",
-    txt: "Text",
-    sh: "sh",
-    md: "Markdown",
+    html: "html"，
+    php: "php"，
+    css: "css"，
+    go: "golang"，
+    java: "java"，
+    js: "javascript"，
+    json: "json"，
+    txt: "Text"，
+    sh: "sh"，
+    md: "Markdown"，
   };
-  var name = path.split("/").pop();
-  var file_name = decodeURIComponent(path.trim("/").split("/").slice(-1)[0].replaceAll("%5C%5C", "%5C"));
-  var ext = name.split(".").pop().toLowerCase();
-  var href = window.location.origin + path;
+  var name = path.split("/")。pop();
+  var file_name = decodeURIComponent(path.trim("/")。split("/")。slice(-1)[0]。replaceAll("%5C%5C"， "%5C"));
+  var ext = name.split(".")。pop()。toLowerCase();
+  var href = window.location。origin + path;
   var content = `
 <div class="mdui-container">
 <pre id="editor" ></pre>
 </div>
 <div class="mdui-textfield">
-	<label class="mdui-textfield-label">File Name</label>
+	<label class="mdui-textfield-label">文件名称</label>
 	<input class="mdui-textfield-input" type="text" value="${file_name}"/>
 </div>
 <div class="mdui-textfield">
-	<label class="mdui-textfield-label">Download Link</label>
+	<label class="mdui-textfield-label">文件直链</label>
 	<input class="mdui-textfield-input" type="text" value="${href}"/>
 </div>
 <a href="${href}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
@@ -6206,9 +6206,9 @@ function file_code(path) {
 <script src="//cdn.jsdelivr.net/gh/cheems/goindex-extended/js/ace.js"></script>
 <script src="//cdn.jsdelivr.net/gh/cheems/goindex-extended/js/ext-language_tools.js"></script>
 	`;
-  $("#content").html(content);
+  $("#content")。html(content);
   $.get(path, function (data) {
-    $("#editor").html($("<div/>").text(data).html());
+    $("#editor")。html($("<div/>")。text(data)。html());
     var code_type = "Text";
     if (type[ext] != undefined) {
       code_type = type[ext];
@@ -6216,11 +6216,11 @@ function file_code(path) {
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/ambiance");
     editor.setFontSize(18);
-    editor.session.setMode("ace/mode/" + code_type);
+    editor.session。setMode("ace/mode/" + code_type);
     editor.setOptions({
-      enableBasicAutocompletion: !0,
-      enableSnippets: !0,
-      enableLiveAutocompletion: !0,
+      enableBasicAutocompletion: !0，
+      enableSnippets: !0，
+      enableLiveAutocompletion: !0，
       maxLines: Infinity,
     });
   });
