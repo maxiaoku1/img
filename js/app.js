@@ -5943,9 +5943,9 @@ function append_files_to_list(path, files) {
   $list.html(($list.data("curPageIndex") == "0" ? "" : $list.html()) + html);
   if (is_lastpage_loaded) {
     $("#count")
-      .removeClass("mdui-hidden")
-      .find(".number")
-      .text($list.find("li.mdui-list-item").length);
+      。removeClass("mdui-hidden")
+      。find(".number")
+      。text($list.find("li.mdui-list-item")。length);
   }
 }
 function render_search_result_list() {
@@ -5956,17 +5956,17 @@ function render_search_result_list() {
 	  <ul class="mdui-list"> 
 	   <li class="mdui-list-item th"> 
 	    <div class="mdui-col-xs-12 mdui-col-sm-7">
-	     文件
+	     File
 	<i class="mdui-icon material-icons icon-sort" data-sort="name" data-order="more">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-3 mdui-text-right">
-	     日期
+	     Date Modified
 	<i class="mdui-icon material-icons icon-sort" data-sort="date" data-order="downward">expand_more</i>
 	    </div> 
 	    <div class="mdui-col-sm-2 mdui-text-right">
-	     大小
+	     Size
 	<i class="mdui-icon material-icons icon-sort" data-sort="size" data-order="downward">expand_more</i>
-	    </div> 
+	    </div>
 	    </li> 
 	  </ul> 
 	 </div> 
@@ -5975,25 +5975,25 @@ function render_search_result_list() {
 	  </ul> 
 	 <div id="readme_md" class="mdui-typo" style="display:none; padding: 20px 0;"></div>
 	`;
-  $("#content").html(content);
-  $("#list").html(
+  $("#content")。html(content);
+  $("#list")。html(
     `<div class="mdui-progress"><div class="mdui-progress-indeterminate"></div></div>`
   );
-  $("#readme_md").hide().html("");
-  $("#head_md").hide().html("");
-  function searchSuccessCallback(res, prevReqParams) {
+  $("#readme_md")。hide()。html("");
+  $("#head_md")。hide()。html("");
+  function searchSuccessCallback(res， prevReqParams) {
     $("#list")
-      .data("nextPageToken", res.nextPageToken)
-      .data("curPageIndex", res.curPageIndex);
-    $("#spinner").remove();
+      。data("nextPageToken", res.nextPageToken)
+      。data("curPageIndex", res.curPageIndex);
+    $("#spinner")。remove();
     if (res.nextPageToken === null) {
-      $(window).off("scroll");
-      window.scroll_status.event_bound = !1;
-      window.scroll_status.loading_lock = !1;
-      append_search_result_to_list(res.data.files);
+      $(window)。off("scroll");
+      window.scroll_status。event_bound = !1;
+      window.scroll_status。loading_lock = !1;
+      append_search_result_to_list(res.data。文件);
     } else {
-      append_search_result_to_list(res.data.files);
-      if (window.scroll_status.event_bound !== !0) {
+      append_search_result_to_list(res.data。文件);
+      if (window.scroll_status。event_bound !== !0) {
         $(window).on("scroll", function () {
           var scrollTop = $(this).scrollTop();
           var scrollHeight = getDocumentHeight();
