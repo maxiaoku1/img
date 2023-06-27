@@ -5537,22 +5537,22 @@ if(UI.helpURL === '') {
 }
 
 const nav_style_colors = {
-  "red": {"background-color": "#FF5252", "color": "#FFF"},
-  "pink": {"background-color": "#FF4081", "color": "#FFF"},
-  "purple": {"background-color": "#E040FB", "color": "#FFF"},
-  "deep-purple": {"background-color": "#7C4DFF", "color": "#FFF"},
-  "indigo": {"background-color": "#536DFE", "color": "#FFF"},
-  "blue": {"background-color": "#448AFF", "color": "#FFF"},
-  "light-blue": {"background-color": "#40C4FF", "color": "#FFF"},
-  "cyan": {"background-color": "#18FFFF", "color": "#000"},
-  "teal": {"background-color": "#64FFDA", "color": "#000"},
-  "green": {"background-color": "#69F0AE", "color": "#FFF"},
-  "light-green": {"background-color": "#B2FF59", "color": "#000"},
-  "lime": {"background-color": "#EEFF41", "color": "#000"},
-  "yellow": {"background-color": "#FFFF00", "color": "#000"},
-  "amber": {"background-color": "#FFD740", "color": "#FFF"},
-  "orange": {"background-color": "#FFAB40", "color": "#FFF"},
-  "deep-orange": {"background-color": "#FF6E40", "color": "#FFF"},
+  "red": {"background-color": "#FF5252"， "color": "#FFF"}，
+  "pink": {"background-color": "#FF4081"， "color": "#FFF"}，
+  "purple": {"background-color": "#E040FB"， "color": "#FFF"}，
+  "deep-purple": {"background-color": "#7C4DFF"， "color": "#FFF"}，
+  "indigo": {"background-color": "#536DFE"， "color": "#FFF"}，
+  "blue": {"background-color": "#448AFF"， "color": "#FFF"}，
+  "light-blue": {"background-color": "#40C4FF"， "color": "#FFF"}，
+  "cyan": {"background-color": "#18FFFF"， "color": "#000"}，
+  "teal": {"background-color": "#64FFDA"， "color": "#000"}，
+  "green": {"background-color": "#69F0AE"， "color": "#FFF"}，
+  "light-green": {"background-color": "#B2FF59"， "color": "#000"}，
+  "lime": {"background-color": "#EEFF41"， "color": "#000"}，
+  "yellow": {"background-color": "#FFFF00"， "color": "#000"}，
+  "amber": {"background-color": "#FFD740"， "color": "#FFF"}，
+  "orange": {"background-color": "#FFAB40"， "color": "#FFF"}，
+  "deep-orange": {"background-color": "#FF6E40"， "color": "#FFF"}，
 }
 
 document.write(
@@ -5564,8 +5564,8 @@ document.write(
 );
 
 function init() {
-  document.siteName = $("title").html();
-  $("body").addClass(
+  document.siteName = $("title")。html();
+  $("body")。addClass(
     `mdui-theme-primary-${UI.main_color} mdui-theme-accent-${UI.accent_color}`
   );
   var html = `
@@ -5582,11 +5582,6 @@ function init() {
   `;
   if (UI.credits) {
     html += `
-    <div style="margin-bottom: 20px" class="mdui-center mdui-text-center">
-      <a href="https://github.com/cheems/goindex-extended" target="_blank">
-        <img src="https://img.shields.io/static/v1?label=cheems&amp;message=goindex-extended&amp;color=1E89F2&amp;labelColor=374455&amp;logo=github" alt="cheems - goindex-extended">
-      </a>
-    </div>
     </div>
     `
   } else {
@@ -5594,23 +5589,23 @@ function init() {
     </div>
     `
   }
-  $("body").html(html);
+  $("body")。html(html);
 }
 const Os = {
-  isWindows: navigator.platform.toUpperCase().indexOf("WIN") > -1,
-  isMac: navigator.platform.toUpperCase().indexOf("MAC") > -1,
-  isMacLike: /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform),
-  isIos: /(iPhone|iPod|iPad)/i.test(navigator.platform),
-  isMobile: /Android|webOS|iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Opera Mini/i.test(
+  isWindows: navigator.platform。toUpperCase()。indexOf("WIN") > -1，
+  isMac: navigator.platform。toUpperCase()。indexOf("MAC") > -1，
+  isMacLike: /(Mac|iPhone|iPod|iPad)/i。test(navigator.platform)，
+  isIos: /(iPhone|iPod|iPad)/i。test(navigator.platform)，
+  isMobile: /Android|webOS|iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Opera Mini/i。test(
     navigator.userAgent
-  ),
+  )，
 };
 function getDocumentHeight() {
   var D = document;
   return Math.max(
-    D.body.scrollHeight,
-    D.documentElement.scrollHeight,
-    D.body.offsetHeight,
+    D.body。scrollHeight，
+    D.documentElement。scrollHeight，
+    D.body。offsetHeight，
     D.documentElement.offsetHeight,
     D.body.clientHeight,
     D.documentElement.clientHeight
